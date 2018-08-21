@@ -1,4 +1,4 @@
-
+"use strict";
 function fnameValidator(){
     var text = document.getElementById("first").value;
     var regex = /^[a-zA-Z]+$/;
