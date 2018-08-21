@@ -1,4 +1,4 @@
-"use strict";
+ "use strict";
 function fnameValidator(){
     var text = document.getElementById("first").value;
     var regex = /^[a-zA-Z]+$/;
@@ -40,12 +40,28 @@ function emailValidator(){
     }
 }
 function Validator(){
+    document.getElementById("addr").style.display = "none";
+    document.getElementById("citi").style.display = "none";
+    document.getElementById("gen").style.display = "none";
     var fname = document.getElementById("first").value;
+    var lname = document.getElementById("last").value;
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("emails").value;
-    
+    var address = document.getElementById("add").value;
+    var city = document.getElementById("cities");
+    var selectedValue = city.options[city.selectedIndex].value;
+    var genders = document.getElementsByName("gender");
+    var count=0;
+    for(var i = 0; i < genders.length; i++) {
+        if(genders[i].checked)
+            count++;
+    }
     if(fname.toString().length==0){
         document.getElementById("fname").style.display = "inline-block";
+        return false;
+    }
+    else if(lname.toString().length==0){
+        document.getElementById("lname").style.display = "inline-block";
         return false;
     }
     else if(phone.toString().length==0){
@@ -54,6 +70,18 @@ function Validator(){
     }
     else if(email.toString().length==0){
         document.getElementById("emessage").style.display = "inline-block";
+        return false;
+    }
+    else if(address.toString().length==0){
+        document.getElementById("addr").style.display = "inline-block";
+        return false;
+    }
+    else if(selectedValue == "select"){
+        document.getElementById("citi").style.display = "inline-block";
+        return false;
+    }
+    else if(count==0){
+        document.getElementById("gen").style.display = "inline-block";
         return false;
     }
     else{
