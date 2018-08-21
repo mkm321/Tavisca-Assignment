@@ -41,16 +41,11 @@ function emailValidator(){
 }
 function Validator(){
     var fname = document.getElementById("first").value;
-    var lname = document.getElementById("last").value;
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("emails").value;
     
     if(fname.toString().length==0){
         document.getElementById("fname").style.display = "inline-block";
-        return false;
-    }
-    else if(lname.toString().length==0){
-        document.getElementById("lname").style.display = "inline-block";
         return false;
     }
     else if(phone.toString().length==0){
