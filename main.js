@@ -130,7 +130,12 @@ function subtraction() {
         divident = divident1;
     }
     historyArray+=divident + " "+"-";
-    resultPerformed -= parseInt(divident);
+    if(resultPerformed==0){
+        resultPerformed=parseInt(divident);
+    }
+    else{
+        resultPerformed -= parseInt(divident);
+    }
     document.getElementById("input-id").value = "";
     document.getElementById("input-id").placeholder = "Enter another number";
     operator = "-";
