@@ -39,24 +39,28 @@
             <label class="form-label">
                 Address:
             </label>
-            <textarea class="address" rows="3" cols="37"placeholder="Enter Address"></textarea><br>
+            <textarea id="add" class="address" rows="3" cols="37"placeholder="Enter Address"></textarea><br>
+            <span id="addr" class="error-message">Enter valid Address</span><br>
             <label class="form-label">
                 City:
             </label>
             <select id="cities" class="city">
+                <option value="select">-Select-</option>
                 <option value="mumbai">Mumbai</option>
                 <option value="pune">Pune</option>
                 <option value="bangalore">Bangalore</option>
                 <option value="hyderabad">Hyderabad</option>
                 <option value="delhi">Delhi</option>
                 <option value="other">Other</option>
-            </select><br>
+            </select>
+            <span id="citi" class="error-message">Enter valid City</span><br>
             <label class="form-label">
                 Gender:
             </label>
-            <input class="radio" type="radio" name="gender" value="male" checked><span class="gender">Male</span>
+            <input class="radio" type="radio" name="gender" value="male"><span class="gender">Male</span>
             <input type="radio" name="gender" value="female"><span class="gender">Female</span>
-            <input type="radio" name="gender" value="trans"><span class="gender">Trans</span><br>
+            <input type="radio" name="gender" value="trans"><span class="gender">Trans</span>
+            <span id="gen" class="error-message">Select a gender</span><br>
             <input id="submit" class="button" type="submit" value="submit">&nbsp&nbsp&nbsp&nbsp
             <input id="reset" type="reset" value="reset">
         </form>
