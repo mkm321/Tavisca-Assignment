@@ -1,7 +1,7 @@
 var divident;
 var divisor;
 var operator;
-var resultPerformed;
+var resultPerformed=0;
 var sum = 0;
 var historyArray = "";
 var iterator = 0;
@@ -114,6 +114,8 @@ function addition() {
     } else {
         divident = divident1;
     }
+    historyArray+=divident + " "+"+";
+    resultPerformed += parseInt(divident);
     document.getElementById("input-id").value = "";
     document.getElementById("input-id").placeholder = "Enter another number";
     operator = "+";
@@ -127,6 +129,8 @@ function subtraction() {
     } else {
         divident = divident1;
     }
+    historyArray+=divident + " "+"-";
+    resultPerformed -= parseInt(divident);
     document.getElementById("input-id").value = "";
     document.getElementById("input-id").placeholder = "Enter another number";
     operator = "-";
@@ -139,6 +143,13 @@ function divide() {
         divident = divident;
     } else {
         divident = divident1;
+    }
+    historyArray+=divident + " "+"/";
+    if(resultPerformed==0){
+        resultPerformed=parseInt(divident);
+    }
+    else{
+        resultPerformed /= parseInt(divident);
     }
     document.getElementById("input-id").value = "";
     document.getElementById("input-id").placeholder = "Enter another number";
@@ -153,6 +164,11 @@ function multiply() {
     } else {
         divident = divident1;
     }
+    historyArray+=divident + " "+"*";
+    if(resultPerformed==0){
+        resultPerformed=1;
+    }
+    resultPerformed *= parseInt(divident);
     document.getElementById("input-id").value = "";
     document.getElementById("input-id").placeholder = "Enter another number";
     operator = "*";
@@ -161,17 +177,16 @@ function multiply() {
 function result() {
     divisor = document.getElementById("input-id").value;
     var query = divident.toString() + " " + operator.toString() + " " + divisor.toString();
-    historyArray += "Equation = ";
-    historyArray += query.toString();
+    historyArray += divisor.toString();
     historyArray += "<br>";
     iterator++;
     divisor = parseInt(divisor);
     divident = parseInt(divident);
     if (operator == "+") {
-        resultPerformed = divident + divisor;
+        resultPerformed+=divisor;
         document.getElementById("input-id").value = resultPerformed;
     } else if (operator == "-") {
-        resultPerformed = divident - divisor;
+        resultPerformed-=divisor;
         document.getElementById("input-id").value = resultPerformed;
     } else if (operator == "/") {
         if (divident == 0 && divisor == 0) {
@@ -179,11 +194,11 @@ function result() {
         } else if (divisor == 0) {
             document.getElementById("input-id").value = "Infinte!";
         } else {
-            resultPerformed = divident / divisor;
+            resultPerformed/=divisor;
             document.getElementById("input-id").value = resultPerformed;
         }
     } else {
-        resultPerformed = divident * divisor;
+        resultPerformed*=divisor;
         document.getElementById("input-id").value = resultPerformed;
     }
     historyArray += "Result = ";
