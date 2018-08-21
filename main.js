@@ -1,3 +1,4 @@
+
 function fnameValidator(){
     var text = document.getElementById("first").value;
     var regex = /^[a-zA-Z]+$/;
@@ -42,7 +43,7 @@ function Validator(){
     var fname = document.getElementById("first").value;
     var lname = document.getElementById("last").value;
     var phone = document.getElementById("phone").value;
-    var email = document.getElementById("phone").value;
+    var email = document.getElementById("emails").value;
     
     if(fname.toString().length==0){
         document.getElementById("fname").style.display = "inline-block";
