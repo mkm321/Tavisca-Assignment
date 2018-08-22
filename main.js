@@ -1,5 +1,9 @@
 var names = ["Ragul", "Rajpreet", "Pallvi", "Neha", "Ankita", "Raja", "Shreea", "Smriti", "Shrijeet", "Ayush", "Swapnil", "Nihit", "Bhargavi", "Anushka", "Swinal", "Utkarsh", "Saurabh", "Paarth", "Vishwas", "Mohit", "Gurbaksh", "Ashwarya"];
 
+function remove() {
+    document.getElementById("list").style.display = "none";
+}
+
 function checkList() {
     document.getElementById("list").style.display = "none";
     var listRef = document.getElementById("list");
@@ -16,14 +20,16 @@ function checkList() {
     } else {
         names.sort();
         var flag2 = 0;
+        var flag3 = 0;
         for (var i = 0; i < names.length; i++) {
+            var li = document.createElement('li');
             var sentence = names[i];
             console.log(sentence);
             sentence = sentence.toLowerCase();
             var flag = 0;
             console.log(searchText.toString());
             if (sentence.indexOf(searchText.toString()) !== -1) {
-                var li = document.createElement('li');
+                flag3 = 1;
                 if (flag2 == 0) {
                     li.style.backgroundColor = "#c2d6d6";
                     li.style.border = "5px solid #CCFFFF";
@@ -43,7 +49,7 @@ function checkList() {
             sentence = sentence.toUpperCase();
             if (flag == 0) {
                 if (sentence.indexOf(searchText.toString()) !== -1) {
-                    var li = document.createElement('li');
+                    flag3 = 1;
                     if (flag2 == 0) {
                         li.style.backgroundColor = "#c2d6d6";
                         li.style.border = "5px solid #CCFFFF";
@@ -60,6 +66,21 @@ function checkList() {
                     li.innerHTML = li.innerHTML + names[i];
                 }
             }
+            li.setAttribute("onclick", "addValue(this.innerHTML)");
+        }
+        if (flag3 == 0) {
+            document.getElementById("list").style.display = "inline-block";
+            var li = document.createElement("li");
+            ul.appendChild(li);
+            li.style.backgroundColor = "#002266";
+            li.style.border = "5px solid #CCFFFF";
+            li.style.height = "28px";
+            li.innerHTML = "No Data Found!";
         }
     }
+}
+
+function addValue(value) {
+    document.getElementById("search").value = value;
+    document.getElementById("list").style.display = "none";
 }
