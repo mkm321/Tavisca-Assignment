@@ -26,7 +26,7 @@ function checkList() {
             var sentence = names[i];
             console.log(sentence);
             sentence = sentence.toLowerCase();
-            var flag = 0;
+            searchText = searchText.toString().toLowerCase();
             console.log(searchText.toString());
             if (sentence.indexOf(searchText.toString()) !== -1) {
                 flag3 = 1;
@@ -44,27 +44,6 @@ function checkList() {
                 }
                 ul.appendChild(li);
                 li.innerHTML = li.innerHTML + names[i];
-                flag = 1;
-            }
-            sentence = sentence.toUpperCase();
-            if (flag == 0) {
-                if (sentence.indexOf(searchText.toString()) !== -1) {
-                    flag3 = 1;
-                    if (flag2 == 0) {
-                        li.style.backgroundColor = "#c2d6d6";
-                        li.style.border = "5px solid #CCFFFF";
-                        li.style.height = "28px";
-                        flag2 = 1;
-                    } else {
-                        li.style.backgroundColor = "#111109"
-                        li.style.color = "#FFFFFF";
-                        li.style.border = "5px solid #CCFFFF";
-                        li.style.height = "28px";
-                        flag2 = 0;
-                    }
-                    ul.appendChild(li);
-                    li.innerHTML = li.innerHTML + names[i];
-                }
             }
             li.setAttribute("onclick", "addValue(this.innerHTML)");
         }
