@@ -14,14 +14,50 @@ function checkList() {
     if (searchText.toString() == "") {
         document.getElementById("list").style.display = "none";
     } else {
+        var flag2 = 0;
         for (var i = 0; i < names.length; i++) {
             var sentence = names[i];
             console.log(sentence);
+            sentence = sentence.toLowerCase();
+            var flag = 0;
             console.log(searchText.toString());
             if (sentence.indexOf(searchText.toString()) !== -1) {
                 var li = document.createElement('li');
+                if (flag2 == 0) {
+                    li.style.backgroundColor = "#c2d6d6";
+                    li.style.border = "5px solid #CCFFFF";
+                    li.style.height = "28px";
+                    flag2 = 1;
+                } else {
+                    li.style.backgroundColor = "#111109"
+                    li.style.color = "#FFFFFF";
+                    li.style.border = "5px solid #CCFFFF";
+                    li.style.height = "28px";
+                    flag2 = 0;
+                }
                 ul.appendChild(li);
-                li.innerHTML = li.innerHTML + sentence;
+                li.innerHTML = li.innerHTML + names[i];
+                flag = 1;
+            }
+            sentence = sentence.toUpperCase();
+            if (flag == 0) {
+                if (sentence.indexOf(searchText.toString()) !== -1) {
+                    var li = document.createElement('li');
+                    if (flag2 == 0) {
+                        li.style.backgroundColor = "#c2d6d6";
+                        li.style.border = "5px solid #CCFFFF";
+                        li.style.height = "28px";
+                        flag2 = 1;
+                    } else {
+                        li.style.backgroundColor = "#111109"
+                        li.style.color = "#FFFFFF";
+                        li.style.border = "5px solid #CCFFFF";
+                        li.style.height = "28px";
+                        flag2 = 0;
+                    }
+                    ul.appendChild(li);
+                    li.innerHTML = li.innerHTML + names[i];
+                }
             }
         }
     }
