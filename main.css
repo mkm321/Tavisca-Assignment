@@ -3,38 +3,44 @@
     width: 650px;
     box-shadow: 0 4px 24px 0 #293D3D;
     border-radius: 10px;
-    background-color: #006622;
+    align-content: center;
+    background-color: #002266;
     padding: 15px;
 }
 
 .header-content {
-    width: 100%;
-    background-color: #CCFFDD;
+    width: 70%;
+    border-radius: 8px;
+    margin-left: 120px;
+    background-color: #CCFFFF;
     margin-bottom: 30px;
     letter-spacing: 3px;
     font-size: 1.7em;
-    color: #009933;
+    color: #4D4D33;
     text-align: center;
 }
 
 .search-item {
     width: 40%;
-    margin-left: 72px;
+    border-radius: 8px;
+    margin-left: 200px;
     margin-bottom: 2px;
-    background-color: #CCFFDD;
-    color: #009933;
+    background-color: #CCFFFF;
+    color: #4D4D33;
     font-size: 1.3em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .list-item {
     display: none;
-    border: 1px solid #CCFFDD;
+    border-radius: 10px;
     width: 40%;
-    margin-left: 72px;
+    margin-left: 200px;
+    text-align: center;
+    padding-right: 40px;
     margin-bottom: 10px;
-    background-color: #CCFFDD;
-    color: #009933;
+    background-color: #CCFFFF;
+    color: #4D4D33;
     font-size: 1.1em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
