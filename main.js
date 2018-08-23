@@ -21,6 +21,7 @@ function checkList() {
         names.sort();
         var flag2 = 0;
         var flag3 = 0;
+        var count=0;
         for (var i = 0; i < names.length; i++) {
             var li = document.createElement('li');
             var sentence = names[i];
@@ -30,6 +31,7 @@ function checkList() {
             console.log(searchText.toString());
             if (sentence.indexOf(searchText.toString()) !== -1) {
                 flag3 = 1;
+                count++;
                 if (flag2 == 0) {
                     li.style.backgroundColor = "#c2d6d6";
                     li.style.border = "5px solid #CCFFFF";
@@ -44,6 +46,12 @@ function checkList() {
                 }
                 ul.appendChild(li);
                 li.innerHTML = li.innerHTML + names[i];
+                if(count>5){
+                    listRef.style.overflowY = "scroll";
+                }
+                else{
+                    listRef.style.overflow = "hidden";
+                }
             }
             li.setAttribute("onclick", "addValue(this.innerHTML)");
         }
