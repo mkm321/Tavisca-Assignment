@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <main class="main-align">
+        <header>
+            <section class="header-content">
+                Registration Form
+           </section>
+        </header>
+        <form onsubmit="return Validator()" action="action.html">
+            <label class="form-label">
+                First Name: 
+            </label>
+            <input oninput="fnameValidator()" id="first" class="first-name" type="text" placeholder="Enter First Name">
+            <span id="fname" class="error-message">Enter Correct First name</span><br>
+            <label class="form-label">
+                Second Name:
+            </label>
+            <input oninput="lnameValidator()" id="last" class="second-name" type="text" placeholder="Enter Last Name">
+            <span id="lname" class="error-message">Enter Correct Last name</span><br>
+            <label class="form-label">
+                Phone Number:
+            </label>
+            <input oninput="phoneValidator()" id="phone" class="phone-number" type="number" placeholder="Enter Phone Number">
+            <span id="contact" class="error-message">Enter valid Phone number</span><br>
+            <label class="form-label">
+                Email:
+            </label>
+            <input oninput="emailValidator()" id="emails" class="email" type="email" placeholder="Enter Email">
+            <span id="emessage" class="error-message">Enter valid Email Address</span><br>
+            <label class="form-label">
+                Address:
+            </label>
+            <textarea id="add" class="address" rows="3" cols="37"placeholder="Enter Address"></textarea><br>
+            <span id="addr" class="error-message">Enter valid Address</span><br>
+            <label class="form-label">
+                City:
+            </label>
+            <select id="cities" class="city">
+                <option value="select">-Select-</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="pune">Pune</option>
+                <option value="bangalore">Bangalore</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="delhi">Delhi</option>
+                <option value="other">Other</option>
+            </select>
+            <span id="citi" class="error-message">Enter valid City</span><br>
+            <label class="form-label">
+                Gender:
+            </label>
+            <input class="radio" type="radio" name="gender" value="male"><span class="gender">Male</span>
+            <input type="radio" name="gender" value="female"><span class="gender">Female</span>
+            <input type="radio" name="gender" value="trans"><span class="gender">Trans</span>
+            <span id="gen" class="error-message">Select a gender</span><br>
+            <input id="submit" class="button" type="submit" value="submit">&nbsp&nbsp&nbsp&nbsp
+            <input id="reset" type="reset" value="reset">
+        </form>
+    </main>
+</body>
+</html>
